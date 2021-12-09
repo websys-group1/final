@@ -1,7 +1,6 @@
-<?php 
-  session_start();
-  session_unset();
-  session_destroy();
-  setcookie(session_name(), "", time() - 3600);
-  header("Location: posts.php");
+
+<?php
+session_start();
+session_destroy();
 ?>
+<meta http-equiv="refresh" content="0;url=login.php" />
