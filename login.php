@@ -35,7 +35,7 @@
                     general message board. There will also be a ‘claim’ button on these posts that other users can click if they see the post and realize that
                     it is their item</p>
                 <h4 id="paragraph">Please log in</h4>
-                <form id="form" action="db.php" method="post">
+                <form id="form" action="db.php" method="post" name="myForm" onsubmit= "return validateForm()">
                     <?php if (isset($_GET['error'])) { ?>
                     <p class="error"><?php echo $_GET['error']; ?></p>
                     <?php } ?>
@@ -54,7 +54,16 @@
         </div>
     </section>
 
-
+    <script>
+        function validateForm(){
+            let x= document.forms["myForm"]["username"].value;
+            let y= document.forms["myForm"]["password"].value;
+            if(x== "" || y==""){
+                alert("Please finish filling out the Log In Form");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>
