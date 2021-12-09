@@ -130,7 +130,7 @@ if(isset($_POST['submit']))
         </section>
 
         <section id="formsection">
-        <form class= "addItem" action="" method="POST" enctype="multipart/form-data" >
+        <form class= "addItem" action="/final/posts.php" method="POST" enctype="multipart/form-data" name= "myForm" onsubmit="return validateForm()">
             <br/>
             <span>Item Name: </span> <input type="text" name="item" value="" />
             <br/>
@@ -154,6 +154,22 @@ if(isset($_POST['submit']))
         </form>
         </section>
     </section>
+
+    <script>
+        function validateForm(){
+            let x= document.forms["myForm"]["item"].value;
+            let y= document.forms["myForm"]["description"].value;
+            let z= document.forms["myForm"]["name"].value;
+            let a= document.forms["myForm"]["rin"].value;
+            let b= document.forms["myForm"]["email"].value;
+            let c= document.forms["myForm"]["location"].value;
+            let d= document.forms["myForm"]["LorF"].value;
+            if(x == ""|| y == ""|| z == ""|| a == ""|| b == ""|| c == ""|| d == ""){
+                alert("Please Finish Filling Out the Form.");
+                return False;
+            }
+        }
+    </script>
 
     <section>
     <div id="footer">
