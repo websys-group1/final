@@ -80,7 +80,8 @@ if(isset($_POST['submit']))
                         <a href="#" class="nav-item nav-link">Contacts</a>
                     </div>
                     <div class="navbar-nav ms-auto">
-                        <a href="landing.html" class="nav-item nav-link">Login</a>
+                        <!-- since we no longer have landing.html, href link had to be changed as below -->
+                        <a href="./logout.php" class="nav-item nav-link">Log Out</a>
                     </div>
                 </div>
             </div>
