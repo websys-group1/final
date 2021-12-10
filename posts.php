@@ -77,7 +77,7 @@ if(isset($_POST['submit']))
                         <a href="posts.php" class="nav-item nav-link active">HomePage</a>
                         <a href="discussionBoard.php" class="nav-item nav-link">Discussion Page</a>
                         <a href="claimed.php" class="nav-item nav-link">Claim Item Form</a>
-                        <a href="#" class="nav-item nav-link">Contacts</a>
+                        <a href="contact/contact.html" class="nav-item nav-link">Contacts</a>
                     </div>
                     <div class="navbar-nav ms-auto">
                         <!-- since we no longer have landing.html, href link had to be changed as below -->
