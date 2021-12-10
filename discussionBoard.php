@@ -115,24 +115,40 @@ if (isset($_POST['submit'])) {
         </section>
 
         <section id="formsection">
-            <form class="addItem" action="" method="POST" enctype="multipart/form-data">
-                <br />
-                <span>Your name: </span> <input type="text" name="name" value="" />
-                <br />
-                <span>Email: </span> <input type="text" name="email" value="" />
-                <br />
-                <!--how do I formatthe submit to upload both files and info? can keep the same?-->
-                <span>Description: </span> <input type="text" name="discription" value="" />
-                <br />
-                <span>Rin: </span> <input type="text" name="rin" value="" />
-                <br />
-                <span>Date: </span><input type="text" name="date" value="" />
-                <br />
-                <input type="submit" name="submit" value="upload" />
+        <form class= "addItem" action="/final/discussionBoard.php" method="POST" enctype="multipart/form-data" name="myForm" onsubmit= "return validateForm()">
+            <br/>
+            <span>Your name: </span> <input type="text" name="name" value="" />
+            <br/>
+            <span>Email: </span> <input type="text" name="email" value=""/>
+            <br/>
+            <!--how do I formatthe submit to upload both files and info? can keep the same?-->
+            <span>Description: </span> <input type="text" name="discription" value=""/>
+            <br/>
+            <span>Rin: </span> <input type="text" name="rin" value=""/>
+            <br/>
+            <span>Date: </span><input type="text" name="date" value="" />
+            <br/>
+            <input type="submit" name="submit" value="upload" />
 
-            </form>
-        </section>
+        </form>
+            </section>
     </section>
+
+    <script>
+        function validateForm(){
+            let x= document.forms["myForm"]["name"].value;
+            let y= document.forms["myForm"]["email"].value;
+            let z= document.forms["myForm"]["discription"].value;
+            let a= document.forms["myForm"]["rin"].value;
+            let b= document.forms["myForm"]["date"].value;
+
+            if( x== ""|| y== "" || z== "" || a== ""|| b== ""){
+                alert("Please finish filling out the form.");
+                return false;
+            }
+        }
+    </script>
+
     <section>
         <div id="footer">
             <div class="text-center p-3" style="background-color: rgba(128, 0, 0, 0.842);">

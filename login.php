@@ -36,7 +36,7 @@
                     it is their item</p>
                 <h4 id="paragraph">Please log in</h4>
                 <form id="form" action="login_authenticate.php" method="post">
-                    <?php if (isset($_GET['error'])) { ?>
+      <?php if (isset($_GET['error'])) { ?>
                     <p class="error"><?php echo $_GET['error']; ?></p>
                     <?php } ?>
                     <input type="text" name="username" placeholder="Username">
@@ -54,7 +54,16 @@
         </div>
     </section>
 
-
+    <script>
+        function validateForm(){
+            let x= document.forms["myForm"]["username"].value;
+            let y= document.forms["myForm"]["password"].value;
+            if(x== "" || y==""){
+                alert("Please finish filling out the Log In Form");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>

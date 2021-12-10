@@ -4,11 +4,14 @@
     Person rin
     email -->
 
-    <?php
-$dbhost = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "final";
+
+
+    <?php 
+$dbhost= "localhost";
+$dbusername= "root";
+$dbpassword= "";
+$dbname="final";
+
 
 $conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
 if (!$conn) {
@@ -54,6 +57,50 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <script>
+        function validateForm(){
+            var item= document.forms["myForm"]["item"];
+            if(item.value == ""){
+                alert("Please finish filling out the Form");
+                item.focus();
+                return false;
+            }
+        }
+    </script>
+    <script>
+        function validateForm(){
+            var name= document.forms["myForm"]["name"];
+            if(name.value == ""){
+                alert("Please finish filling out the Form");
+                name.focus();
+                return false;
+            }
+        }
+    </script>
+    <script>
+        function validateForm(){
+            var rin= document.forms["myForm"]["rin"];
+            if(rin.value == ""){
+                alert("Please finish filling out the Form");
+                rin.focus();
+                return false;
+            }
+        }
+    </script>
+    <script>
+        function validateForm(){
+            var email= document.forms["myForm"]["email"];
+            if(email.value == ""){
+                alert("Please finish filling out the Form");
+                email.focus();
+                return false;
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -111,19 +158,21 @@ if (isset($_POST['submit'])) {
             </div>
         </section>
         <section id="formsection">
-            <form class="addItem" action="" method="POST" enctype="multipart/form-data">
-                <br />
-                <span>Item Name: </span><input type="text" name="item" value="" />
-                <br />
-                <span>Your Name: </span><input type="text" name="name" value="" />
-                <br />
-                <span>RIN: </span> <input type="text" name="rin" value="" />
-                <br />
-                <span>Email: </span> <input type="text" name="email" value="" />
-                <br />
-                <input type="submit" name="submit" value="upload" />
-            </form>
-        </section>
+
+        <form name="myForm" class="addItem" action="/final/claimed.php" method="POST" enctype="multipart/form-data"  onsubmit= "return validateForm()">
+            <br/>
+            <span>Item Name: </span><input type="text" name="item" value=""/>
+            <br/>
+            <span>Your Name: </span><input type="text" name="name" value=""/>
+            <br/>
+            <span>RIN: </span> <input type="text" name="rin" value=""/>
+            <br/>
+            <span>Email: </span> <input type="text" name="email" value=""/>
+            <br/>
+            <input type="submit" name="submit"  value="Submit"/>
+        </form>
+            </section>
+        
 
     </section>
 
@@ -135,6 +184,9 @@ if (isset($_POST['submit'])) {
             </footer>
         </div>
     </section>
-</body>
+    </body>
+    
+
 
 </html>
+
