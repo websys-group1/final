@@ -132,7 +132,6 @@ if (isset($_POST['submit'])) {
 
         </form>
             </section>
-
     </section>
 
     <script>
