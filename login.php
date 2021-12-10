@@ -22,7 +22,7 @@
         <header>
             <h2><a href="#" class= "logo"><img src="LogoSample_ByTailorBrands (1).jpg" height= 100px width= 100px></a></h2>
             <div class="navigation">
-                <a href="#">About us</a>
+                <a href="./signup.php">Sign Up</a>
                 <a href="#">Contact</a>
             </div>
         </header>
@@ -35,7 +35,7 @@
                     general message board. There will also be a ‘claim’ button on these posts that other users can click if they see the post and realize that
                     it is their item</p>
                 <h4 id="paragraph">Please log in</h4>
-                <form id="form" action="db.php" method="post">
+                <form id="form" action="login_authenticate.php" method="post">
                     <?php if (isset($_GET['error'])) { ?>
                     <p class="error"><?php echo $_GET['error']; ?></p>
                     <?php } ?>

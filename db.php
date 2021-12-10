@@ -55,7 +55,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
   }
 } else {
-  header("Location: posts.php");
+  header("Location: signup.php");
   exit();
 }
 ?>
